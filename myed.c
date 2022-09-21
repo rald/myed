@@ -43,7 +43,7 @@ int load(char *path,char ***lines,size_t *nlines) {
   size_t llen=0;
   ssize_t rlen=0;
 
-  if((fin=fopen(path,"rt"))==NULL) {
+  if((fin=fopen(path,"r"))==NULL) {
     perror(path);
     return 1;
   }
@@ -65,7 +65,7 @@ int load(char *path,char ***lines,size_t *nlines) {
 int save(char *path,char **lines,size_t nlines) {
   FILE *fout;
 
-  if((fout=fopen(path,"wt"))==NULL) {
+  if((fout=fopen(path,"w"))==NULL) {
     perror(path);
     return 1;
   }
@@ -256,7 +256,7 @@ int main(int argc,char **argv) {
           printf("OK\n");
         }
       }        
-    } else if(sscanf(line,"s [^\n]\n",&pattern)==1) {
+    } else if(sscanf(line,"s %[^\n]\n",pattern)==1) {
       
     }
     
