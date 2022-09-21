@@ -1,5 +1,5 @@
 myed:
-	cc myed.c -o myed
+	cc myed.c -o myed -I. -L. -g
 
 .PHONY: clean
 

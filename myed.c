@@ -4,6 +4,9 @@
 #include <string.h>
 #include <errno.h>
 
+#define MYLIB_IMPLEMENTATION
+#include "mylib.h"
+
 
 #define STRING_MAX 1024
 
@@ -109,6 +112,7 @@ int main(int argc,char **argv) {
   
   size_t startLine=0;
   size_t endLine=0;
+  char pattern[STRING_MAX];
 
 
 
@@ -252,6 +256,8 @@ int main(int argc,char **argv) {
           printf("OK\n");
         }
       }        
+    } else if(sscanf(line,"s [^\n]\n",&pattern)==1) {
+      
     }
     
   }
